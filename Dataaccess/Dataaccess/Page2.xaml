@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Dataaccess.Page2">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Image x:Name="images"
+                       Aspect="Fill"
+                       HeightRequest="250"
+                       WidthRequest="400" />
+                <Label x:Name="names"
+                       FontSize="30"
+                       FontAttributes="Bold"
+                       Padding="20,20,10,10" />
+                <Label x:Name="times"
+                       FontSize="20"
+                       TextColor="DarkGray"
+                       Padding="20,10,10,10" />
+                <Label x:Name="noidung1"
+                       FontSize="25"
+                       Padding="20,10,10,20" />
+            </StackLayout>
+        </ScrollView>
+        
+    </ContentPage.Content>
+</ContentPage>

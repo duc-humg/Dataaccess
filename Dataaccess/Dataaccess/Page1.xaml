@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Dataaccess.Page1"
+             Title="Movies">
+    <ContentPage.Content>
+        <StackLayout>
+            <SearchBar TextChanged="SearchBar_TextChanged"
+                       x:Name="search"/>
+            <ListView ItemsSource="{Binding list}"
+                      x:Name="List1"
+                      HeightRequest="100"
+                      ItemTapped="List1_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <Grid Padding="10,5,0,0" >
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="20" />
+                                        <RowDefinition Height="50"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition  Width="80"/>
+                                        <ColumnDefinition  Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Source="{Binding image}"
+                                           Aspect="AspectFill"
+                                           HeightRequest="80"
+                                           WidthRequest="80" 
+                                           Grid.Column="0"
+                                           Grid.RowSpan="2"/>
+                                    <Label Text="{Binding name}"
+                                           FontSize="18"
+                                           FontAttributes="Bold"
+                                           Grid.Column="1"
+                                           Grid.Row="0" />
+                                    <Label Text="{Binding time}"
+                                           FontSize="10"
+                                           FontAttributes="Bold"
+                                           Grid.Column="1"
+                                           Grid.Row="1" 
+                                           HorizontalOptions="Start"/>
+                                </Grid>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
